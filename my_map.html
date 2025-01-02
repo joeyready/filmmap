@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_d798de6d05ded746459d103d49503c44 {
+                #map_283b0112b1fbef2fdf49f745ad058533 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -39,19 +39,19 @@
 <body>
     
     
-            <div class="folium-map" id="map_d798de6d05ded746459d103d49503c44" ></div>
+            <div class="folium-map" id="map_283b0112b1fbef2fdf49f745ad058533" ></div>
         
 </body>
 <script>
     
     
-            var map_d798de6d05ded746459d103d49503c44 = L.map(
-                "map_d798de6d05ded746459d103d49503c44",
+            var map_283b0112b1fbef2fdf49f745ad058533 = L.map(
+                "map_283b0112b1fbef2fdf49f745ad058533",
                 {
                     center: [37.7749, -122.4194],
                     crs: L.CRS.EPSG3857,
                     ...{
-  "zoom": 12,
+  "zoom": 13,
   "zoomControl": true,
   "preferCanvas": false,
 }
@@ -63,7 +63,7 @@
 
         
     
-            var tile_layer_258837797d6fe6cb43cb2d2650bed756 = L.tileLayer(
+            var tile_layer_6349a27f707eb46bb2cee1ad1ac73c8a = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -80,28 +80,48 @@
             );
         
     
-            tile_layer_258837797d6fe6cb43cb2d2650bed756.addTo(map_d798de6d05ded746459d103d49503c44);
+            tile_layer_6349a27f707eb46bb2cee1ad1ac73c8a.addTo(map_283b0112b1fbef2fdf49f745ad058533);
         
     
-            var marker_7ee6f06703dcaef85ceb0e407c78e1a8 = L.marker(
+            var tile_layer_15f81f40269c3ed0cec7d9785336fc97 = L.tileLayer(
+                "http://tile.stamen.com/toner/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e, Map data \u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_15f81f40269c3ed0cec7d9785336fc97.addTo(map_283b0112b1fbef2fdf49f745ad058533);
+        
+    
+            var marker_522a17007df209f0b2e98a3bab67f15f = L.marker(
                 [37.7749, -122.4194],
                 {
 }
-            ).addTo(map_d798de6d05ded746459d103d49503c44);
+            ).addTo(map_283b0112b1fbef2fdf49f745ad058533);
         
     
-        var popup_6e59d226cd19591fc3b26f55cfc8faf1 = L.popup({
+        var popup_1e1ab268edd6901cd4eef122df53d815 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_3d2975b7ba6bf612e3ea68cdd19a6169 = $(`<div id="html_3d2975b7ba6bf612e3ea68cdd19a6169" style="width: 100.0%; height: 100.0%;">San Francisco</div>`)[0];
-                popup_6e59d226cd19591fc3b26f55cfc8faf1.setContent(html_3d2975b7ba6bf612e3ea68cdd19a6169);
+                var html_a28b24489e4b712c6dac6aacb9586cdb = $(`<div id="html_a28b24489e4b712c6dac6aacb9586cdb" style="width: 100.0%; height: 100.0%;">San Francisco</div>`)[0];
+                popup_1e1ab268edd6901cd4eef122df53d815.setContent(html_a28b24489e4b712c6dac6aacb9586cdb);
             
         
 
-        marker_7ee6f06703dcaef85ceb0e407c78e1a8.bindPopup(popup_6e59d226cd19591fc3b26f55cfc8faf1)
+        marker_522a17007df209f0b2e98a3bab67f15f.bindPopup(popup_1e1ab268edd6901cd4eef122df53d815)
         ;
 
         

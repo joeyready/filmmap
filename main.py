@@ -1,14 +1,39 @@
-import pandas as pandas
 import folium
+import pandas as pd
+import streamlit as st
+from streamlit_folium import st_folium
 
-# csv_to_sqlite('filmmap.csv', 'filmmap.db', 'filmmap')
+# Load the CSV file
+csv_file = "filmmap.csv"
+data = pd.read_csv(csv_file)
 
 # Create a map centered on a specific location
-map_center = [37.7749, -122.4194] # San Francisco
-my_map = folium.Map(location=map_center, zoom_start=12)
+map_center = [38.79, -106.5348]  # Default to San Francisco
+my_map = folium.Map(location=map_center, zoom_start=3)
 
-# Add a marker
-folium.Marker([37.7749, -122.4194], popup="San Francisco").add_to(my_map)
+# Add markers from the CSV
+for index, row in data.iterrows():
+    latitude = row['latitude']
+    longitude = row['longitude']
+    name = row['name']
+    gmap_url = row['gmap_url']
+    
+    # Create HTML content for the popup
+    popup_html = f"""
+    <b>{name}</b><br>
+    <a href="{gmap_url}" target="_blank">View on Google Maps</a>
+    """
+    
+    # Add marker with custom popup
+    folium.Marker(
+        [latitude, longitude], 
+        popup=folium.Popup(popup_html, max_width=250),
+        icon=folium.Icon(color='orange',icon='circle')
+    ).add_to(my_map)
 
-# Save the map as an HTML file
-my_map.save("my_map.html")
+# Streamlit app
+st.title("Awesome Cameras Film Map")
+st.write("Below is map of camera shops and film labs around the world.")
+
+# Display the map in Streamlit
+st_folium(my_map, width=800, height=550)
