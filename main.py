@@ -2,7 +2,7 @@ import folium
 import pandas as pd
 import streamlit as st
 
-from streamlit_folium import st_folium
+import streamlit_folium as st_folium
 
 # Load the CSV file
 csv_file = "filmmap.csv"
